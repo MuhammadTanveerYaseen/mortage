@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redline Marketing Group - Social Media Management for Mortgage Loan Officers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rmg-blue': '#00AEEF',
+                        'rmg-red': '#E10600',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,174,239,0.1) 0%, rgba(225,6,0,0.05) 100%);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #00AEEF 0%, #E10600 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-popular {
+            position: relative;
+            border: 2px solid #00AEEF;
+        }
+        
+        .pricing-popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #00AEEF;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/logo.png" alt="Redline Marketing Group Logo" class="h-26 md:h-32 max-h-32 w-auto max-h-24 object-contain transition-all duration-300" style="max-width:180px;">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-700 hover:text-rmg-blue font-medium">Services</a>
+                <a href="#pricing" class="text-gray-700 hover:text-rmg-blue font-medium">Pricing</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-rmg-blue font-medium">Results</a>
+                <a href="#faq" class="text-gray-700 hover:text-rmg-blue font-medium">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-rmg-blue font-medium">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#services" class="text-gray-700 hover:text-rmg-blue font-medium">Services</a>
+                <a href="#pricing" class="text-gray-700 hover:text-rmg-blue font-medium">Pricing</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-rmg-blue font-medium">Results</a>
+                <a href="#faq" class="text-gray-700 hover:text-rmg-blue font-medium">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-rmg-blue font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                        Mortgage Loan Officers: Stop Struggling With Social Media
+                        <span class="text-rmg-blue">Get Consistent Leads & Save Time</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Expertly managed posts & video content that builds trust and boosts inquiries
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#pricing" class="bg-rmg-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                            View Our Packages & Sign Up
+                        </a>
+                        <a href="#contact" class="bg-white hover:bg-gray-100 text-rmg-blue border border-rmg-blue font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                            Book Free Strategy Call
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Social Media Marketing" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-rmg-blue">100+</div>
+                    <div class="text-gray-600">Loan Officers Served</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-rmg-blue">14-Day</div>
+                    <div class="text-gray-600">Satisfaction Guarantee</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-rmg-blue">5x</div>
+                    <div class="text-gray-600">More Leads on Average</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-rmg-blue">100%</div>
+                    <div class="text-gray-600">Compliant Content</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Are You Facing These Mortgage Marketing Challenges?</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Mortgage loan officers like you struggle with social media marketing every day. Here's how we solve these problems.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="text-rmg-blue text-3xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">No Time for Content</h3>
+                    <p class="text-gray-600">
+                        Between meetings and applications, you barely have time to post consistently. We handle everything so you can focus on closing loans.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="text-rmg-blue text-3xl mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Content Ideas Running Dry</h3>
+                    <p class="text-gray-600">
+                        Struggling to come up with fresh, engaging content? Our mortgage-specific content calendar keeps your feed active and interesting.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="text-rmg-blue text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">No Measurable ROI</h3>
+                    <p class="text-gray-600">
+                        Posting without seeing results? Our conversion-focused strategy delivers tangible leads and appointments.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="text-rmg-blue text-3xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Compliance Concerns</h3>
+                    <p class="text-gray-600">
+                        Worried about violating regulations? Our team knows mortgage compliance inside and out.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="text-rmg-blue text-3xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Blending In With Competitors</h3>
+                    <p class="text-gray-600">
+                        Your content looks like everyone else's? We help you stand out with unique, brand-building posts.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="text-rmg-blue text-3xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Inconsistent Posting</h3>
+                    <p class="text-gray-600">
+                        Your social media presence is hit or miss? We ensure regular, high-quality content that keeps you top of mind.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Your Complete Social Media Solution</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We handle everything so you can focus on what you do best - closing loans.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-rmg-blue mb-4">Standard Package</h3>
+                    <p class="text-gray-600 mb-6">Perfect for loan officers who need consistent, professional content to build their brand and generate leads.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">10 Custom-Designed Posts/Month</h4>
+                                <p class="text-gray-600 text-sm">Across Facebook, LinkedIn, and Instagram</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Curated Content Strategy</h4>
+                                <p class="text-gray-600 text-sm">Educational insights, market updates, local community, trust-building 'about us' posts</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Profile Setup & Optimization</h4>
+                                <p class="text-gray-600 text-sm">We'll make sure your profiles are professional and complete</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Monthly Content Calendar</h4>
+                                <p class="text-gray-600 text-sm">See what's coming up and provide feedback</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Basic Comment Monitoring</h4>
+                                <p class="text-gray-600 text-sm">We'll keep an eye on engagement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md pricing-popular">
+                    <h3 class="text-2xl font-bold text-rmg-blue mb-4">Premium Package</h3>
+                    <p class="text-gray-600 mb-6">For loan officers serious about dominating their market with video content and advanced lead generation.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Everything in Standard</h4>
+                                <p class="text-gray-600 text-sm">Plus these powerful upgrades</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">4 Videos/Month</h4>
+                                <p class="text-gray-600 text-sm">Market updates, client milestones, testimonials, educational content</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Advanced Strategy</h4>
+                                <p class="text-gray-600 text-sm">Inbound lead CTAs, lead magnet promotion, strategic support</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Priority Support</h4>
+                                <p class="text-gray-600 text-sm">Faster response times and strategic consultations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue mt-1 mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Performance Analytics</h4>
+                                <p class="text-gray-600 text-sm">Detailed reports on what's working and why</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#pricing" class="bg-rmg-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300">
+                    Choose Your Plan & Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Mortgage Loan Officers Choose Redline</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our mortgage-specific approach delivers real results for loan officers nationwide.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4 feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mortgage Industry Experts</h3>
+                    <p class="text-gray-600">
+                        We speak mortgage. Our content is crafted by professionals who understand loan officer challenges and compliance requirements.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4 feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Conversion-First Approach</h3>
+                    <p class="text-gray-600">
+                        Every post is designed to build trust and generate leads, not just vanity metrics.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4 feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">High-Touch Support</h3>
+                    <p class="text-gray-600">
+                        Especially in our Premium package, you get strategic guidance, not just content.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4 feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Proven Framework</h3>
+                    <p class="text-gray-600">
+                        Our system has helped hundreds of loan officers attract more clients.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4 feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Time Savings</h3>
+                    <p class="text-gray-600">
+                        Reclaim 10+ hours per month you'd spend creating content.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4 feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Compliance Peace of Mind</h3>
+                    <p class="text-gray-600">
+                        Sleep easy knowing your content meets all regulatory requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Real Loan Officers, Real Results</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what our clients say.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Greg Gale went from 1 lead/month to 11 appointments in 3 months with Redline! The video content in the Premium package has been a game-changer for my business."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Greg Gale" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Greg Gale</h4>
+                            <p class="text-gray-600 text-sm">Senior Loan Officer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "I was skeptical about social media ROI, but Redline proved me wrong. I've closed 3 loans directly from their content in the last quarter. Worth every penny."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Mortgage Advisor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "The compliance peace of mind alone is worth it. Plus, my referral partners actually comment on and share my posts now. My visibility has skyrocketed."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Branch Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Simple, Transparent Pricing</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Choose the package that fits your goals. Cancel anytime.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-lg pricing-card">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Standard</h3>
+                    <p class="text-gray-600 mb-6">Perfect for establishing your professional presence</p>
+                    
+                    <div class="text-4xl font-bold text-rmg-blue mb-6">$297<span class="text-lg font-normal text-gray-600">/month</span></div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>10 Custom Posts/Month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Facebook, LinkedIn, Instagram</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Curated Content Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Profile Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Monthly Content Calendar</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Basic Comment Monitoring</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full bg-rmg-blue hover:bg-blue-600 text-white text-center font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Get Started
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg pricing-card pricing-popular">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Premium</h3>
+                            <p class="text-gray-600 mb-6">For serious lead generation with video</p>
+                        </div>
+                        <span class="bg-rmg-blue text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
+                    </div>
+                    
+                    <div class="text-4xl font-bold text-rmg-blue mb-6">$397<span class="text-lg font-normal text-gray-600">/month</span></div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Everything in Standard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>4 Videos/Month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Advanced Lead Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Inbound Lead CTAs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Lead Magnet Promotion</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="text-green-500 mr-2">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full bg-rmg-red hover:bg-red-700 text-white text-center font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Choose Premium
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-rmg-blue bg-opacity-10 p-6 rounded-lg max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-3/4 mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Not Sure Which Plan Is Right For You?</h3>
+                        <p class="text-gray-600">
+                            Schedule a free 15-minute strategy call with our team. We'll assess your needs and recommend the best approach.
+                        </p>
+                    </div>
+                    <div class="md:w-1/4 text-center md:text-right">
+                        <a href="#contact" class="bg-rmg-blue hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300">
+                            Book a Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/4 mb-6 md:mb-0 text-center">
+                        <div class="w-20 h-20 bg-rmg-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-shield-alt text-rmg-blue text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">14-Day Satisfaction Guarantee</h3>
+                        <p class="text-gray-600">
+                            We're confident you'll love our service. If you're not completely satisfied within the first 14 days, we'll refund your first month's payment, no questions asked.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Get answers to common questions about our social media management service.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Can't I just do this myself?</span>
+                        <i class="fas fa-chevron-down text-rmg-blue"></i>
+                    </button>
+                    <div class="faq-answer p-6 bg-white hidden">
+                        <p class="text-gray-600">
+                            You absolutely can, but most loan officers find they lose valuable time trying to create content consistently. Our clients typically save 10+ hours per month by outsourcing to us. Plus, our mortgage-specific expertise means your content will be more effective than DIY attempts.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Isn't this expensive?</span>
+                        <i class="fas fa-chevron-down text-rmg-blue"></i>
+                    </button>
+                    <div class="faq-answer p-6 bg-white hidden">
+                        <p class="text-gray-600">
+                            Consider the cost of not having an effective social media presence or the hours you'd spend trying to do it yourself. Our Premium clients typically see a return of 3-5x their investment in closed loans. One additional loan per year more than covers the entire annual cost.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">Does social media really generate mortgage leads?</span>
+                        <i class="fas fa-chevron-down text-rmg-blue"></i>
+                    </button>
+                    <div class="faq-answer p-6 bg-white hidden">
+                        <p class="text-gray-600">
+                            With our mortgage-specific strategy, absolutely. Generic social media management often fails, but our content is designed to build trust and generate inquiries from potential borrowers and referral partners. Many clients report loans closed directly from our content.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">What if I've tried social media management before without results?</span>
+                        <i class="fas fa-chevron-down text-rmg-blue"></i>
+                    </button>
+                    <div class="faq-answer p-6 bg-white hidden">
+                        <p class="text-gray-600">
+                            Most social media services take a generic approach. We're different because we specialize exclusively in mortgage professionals. Our content speaks directly to homebuyers and referral partners in a way that converts. That's why we offer a 14-day guarantee - we're confident you'll see the difference.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">How do you ensure compliance with mortgage regulations?</span>
+                        <i class="fas fa-chevron-down text-rmg-blue"></i>
+                    </button>
+                    <div class="faq-answer p-6 bg-white hidden">
+                        <p class="text-gray-600">
+                            Our team includes former mortgage professionals who understand compliance requirements. All content is reviewed for compliance before posting, and we stay current with regulatory changes. We'll never put your license at risk with questionable content.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-800">What's your cancellation policy?</span>
+                        <i class="fas fa-chevron-down text-rmg-blue"></i>
+                    </button>
+                    <div class="faq-answer p-6 bg-white hidden">
+                        <p class="text-gray-600">
+                            You can cancel anytime with 30 days notice. There are no long-term contracts or hidden fees. If you're not satisfied, we offer a 14-day money-back guarantee on your first month.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-rmg-blue">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get More Leads From Social Media?</h2>
+                <p class="text-xl text-blue-100 mb-8">
+                    Stop leaving money on the table with an inconsistent or ineffective social media presence.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing" class="bg-white hover:bg-gray-100 text-rmg-blue font-bold py-3 px-8 rounded-lg inline-block transition duration-300">
+                        Choose Your Plan
+                    </a>
+                    <a href="#contact" class="bg-transparent hover:bg-blue-600 border-2 border-white text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300">
+                        Book a Strategy Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Have questions? Want to discuss your specific needs? Reach out anytime.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue text-xl mt-1 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Our Office</h4>
+                                <p class="text-gray-600">need your Information</p>
+                                <p class="text-gray-600">..</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue text-xl mt-1 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">need your number</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue text-xl mt-1 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">info@redlinemktg.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-rmg-blue text-xl mt-1 mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 9am - 5pm PST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="bg-rmg-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="/logo.png" alt="Redline Marketing Group Logo" class="h-24 mb-4 bg-transparent">
+                    <p class="text-gray-400">
+                        Expert social media management for mortgage loan officers who want consistent leads without the hassle.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Results</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-sm"></i>
+                            <span>need your number</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-sm"></i>
+                            <span>info@redlinemktg.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; 2025 Redline Marketing Group. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+                
+                // Close other open answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').classList.remove('fa-chevron-up');
+                        q.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
