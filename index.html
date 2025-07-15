@@ -3,1019 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redline Marketing Group - Social Media Management for Mortgage Loan Officers</title>
+    <title>Happy Birthday My Future Wife - Jan-e-Jahan Areej Fatima</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'rmg-blue': '#00AEEF',
-                        'rmg-red': '#E10600',
-                    }
-                }
-            }
-        }
+        const { jsPDF } = window.jspdf;
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: #0f0f1a;
+            overflow-x: hidden;
+            color: #fff;
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(0,174,239,0.1) 0%, rgba(225,6,0,0.05) 100%);
+        .handwritten {
+            font-family: 'Dancing Script', cursive;
         }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, #00AEEF 0%, #E10600 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .bg-romantic {
+            background: linear-gradient(135deg, #0f0524 0%, #3a154f 25%, #892584 50%, #d63e72 75%, #ff7b93 100%);
         }
-        
-        .testimonial-card {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pricing-card {
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pricing-popular {
-            position: relative;
-            border: 2px solid #00AEEF;
-        }
-        
-        .pricing-popular::before {
-            content: 'Most Popular';
+        .particle {
             position: absolute;
-            top: -12px;
-            right: 20px;
-            background: #00AEEF;
-            color: white;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .flower {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-10px) rotate(2deg) scale(1.05); }
+            50% { transform: translateY(-20px) rotate(5deg) scale(1.1); }
+            75% { transform: translateY(-10px) rotate(2deg) scale(1.05); }
+            100% { transform: translateY(0) rotate(0deg) scale(1); }
+        }
+        .rose-petal {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff69b4" d="M50,15 C60,0 80,5 85,20 C90,35 70,50 50,65 C30,50 10,35 15,20 C20,5 40,0 50,15 Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            animation: petal-fall 8s linear infinite;
+        }
+        .kiss {
+            animation-name: petal-fall-kiss;
+            z-index: 1;
+        }
+        @keyframes petal-fall {
+            0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translate(calc(50vw - 50%), 100vh) rotate(360deg); opacity: 0; }
+        }
+        @keyframes petal-fall-kiss {
+            0% { transform: translate(0, -10vh) rotate(0deg) scale(0.5); opacity: 0; }
+            10% { opacity: 1; transform: scale(1.2); }
+            50% { transform: scale(1.5); }
+            100% { transform: translate(calc(50vw - 50%), 100vh) rotate(360deg) scale(0.8); opacity: 0; }
+        }
+        .message-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px -10px #f687b3; }
+            to { box-shadow: 0 0 20px 5px #f687b3; }
+        }
+        .btn-romantic {
+            background: linear-gradient(45deg, #9a1f6a, #4a1e6a);
+            transition: all 0.3s ease;
+        }
+        .btn-romantic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(154, 31, 106, 0.3);
+        }
+        .hearts {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff0000"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center center;
+            pointer-events: none;
+            opacity: 0;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header/Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="/logo.png" alt="Redline Marketing Group Logo" class="h-26 md:h-32 max-h-32 w-auto max-h-24 object-contain transition-all duration-300" style="max-width:180px;">
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#services" class="text-gray-700 hover:text-rmg-blue font-medium">Services</a>
-                <a href="#pricing" class="text-gray-700 hover:text-rmg-blue font-medium">Pricing</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-rmg-blue font-medium">Results</a>
-                <a href="#faq" class="text-gray-700 hover:text-rmg-blue font-medium">FAQ</a>
-                <a href="#contact" class="text-gray-700 hover:text-rmg-blue font-medium">Contact</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
-            <div class="flex flex-col space-y-4">
-                <a href="#services" class="text-gray-700 hover:text-rmg-blue font-medium">Services</a>
-                <a href="#pricing" class="text-gray-700 hover:text-rmg-blue font-medium">Pricing</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-rmg-blue font-medium">Results</a>
-                <a href="#faq" class="text-gray-700 hover:text-rmg-blue font-medium">FAQ</a>
-                <a href="#contact" class="text-gray-700 hover:text-rmg-blue font-medium">Contact</a>
-            </div>
-        </div>
-    </header>
+<body class="bg-romantic min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <!-- Background elements -->
+    <div id="particles"></div>
+    <div id="flowers"></div>
+    <div id="hearts-container"></div>
+    
+    <!-- Romantic Verse -->
+    <div class="absolute top-4 left-4 z-50 text-pink-200 italic handwritten text-sm md:text-base">
+        "From my first glance, I measured eternity<br>
+        Through your eyes, I found infinity<br>
+        Happy Birthday to my heart's compass"
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient py-16 md:py-24">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
-                        Mortgage Loan Officers: Stop Struggling With Social Media
-                        <span class="text-rmg-blue">Get Consistent Leads & Save Time</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Expertly managed posts & video content that builds trust and boosts inquiries
-                    </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#pricing" class="bg-rmg-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
-                            View Our Packages & Sign Up
-                        </a>
-                        <a href="#contact" class="bg-white hover:bg-gray-100 text-rmg-blue border border-rmg-blue font-bold py-3 px-6 rounded-lg text-center transition duration-300">
-                            Book Free Strategy Call
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Social Media Marketing" class="rounded-lg shadow-xl">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Audio Toggle -->
+    <div class="absolute top-4 right-4 z-50">
+        <button id="musicToggle" class="bg-pink-600 hover:bg-pink-700 text-white rounded-full p-3 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 011.414 1.414" />
+            </svg>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+            <!-- Backup romantic flute music -->
+            <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-flute-623.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
-    <!-- Trust Badges -->
-    <section class="bg-gray-100 py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-rmg-blue">100+</div>
-                    <div class="text-gray-600">Loan Officers Served</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-rmg-blue">14-Day</div>
-                    <div class="text-gray-600">Satisfaction Guarantee</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-rmg-blue">5x</div>
-                    <div class="text-gray-600">More Leads on Average</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-rmg-blue">100%</div>
-                    <div class="text-gray-600">Compliant Content</div>
-                </div>
-            </div>
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 z-10 max-w-4xl">
+        <div id="stepContainer" class="flex flex-col items-center">
+            <!-- Step 1 will be inserted here -->
         </div>
-    </section>
+    </div>
 
-    <!-- Problem Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Are You Facing These Mortgage Marketing Challenges?</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Mortgage loan officers like you struggle with social media marketing every day. Here's how we solve these problems.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div class="text-rmg-blue text-3xl mb-4">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">No Time for Content</h3>
-                    <p class="text-gray-600">
-                        Between meetings and applications, you barely have time to post consistently. We handle everything so you can focus on closing loans.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div class="text-rmg-blue text-3xl mb-4">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Content Ideas Running Dry</h3>
-                    <p class="text-gray-600">
-                        Struggling to come up with fresh, engaging content? Our mortgage-specific content calendar keeps your feed active and interesting.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div class="text-rmg-blue text-3xl mb-4">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">No Measurable ROI</h3>
-                    <p class="text-gray-600">
-                        Posting without seeing results? Our conversion-focused strategy delivers tangible leads and appointments.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div class="text-rmg-blue text-3xl mb-4">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Compliance Concerns</h3>
-                    <p class="text-gray-600">
-                        Worried about violating regulations? Our team knows mortgage compliance inside and out.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div class="text-rmg-blue text-3xl mb-4">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Blending In With Competitors</h3>
-                    <p class="text-gray-600">
-                        Your content looks like everyone else's? We help you stand out with unique, brand-building posts.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <div class="text-rmg-blue text-3xl mb-4">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Inconsistent Posting</h3>
-                    <p class="text-gray-600">
-                        Your social media presence is hit or miss? We ensure regular, high-quality content that keeps you top of mind.
-                    </p>
-                </div>
-            </div>
+    <!-- Final Celebration (hidden initially) -->
+    <div id="finalCelebration" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="text-center p-8 max-w-2xl">
+            <h1 class="handwritten text-5xl md:text-7xl text-pink-400 mb-6 glow">Happy Birthday My Eternal Love Areej Fatima</h1>
+            <div id="finalSparkles" class="my-8"></div>
+            <p class="text-xl mb-8 handwritten">"My soul recognizes yours like the moon recognizes its ocean - drawn in inevitable tide. On this day when the universe first received your light, I celebrate the miracle of your existence. May Allah bless every step with grace, every breath with joy, and every moment with love as infinite as my devotion to you - today and for all the beautiful tomorrows we'll share together."</p>
+            <button id="downloadBtn" class="btn-romantic text-white font-bold py-3 px-6 rounded-full text-lg mb-4">
+                Download Our Love Letter
+            </button>
+            <button id="restartBtn" class="bg-white text-pink-600 font-bold py-3 px-6 rounded-full text-lg">
+                Relive Our Story
+            </button>
         </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section id="services" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Your Complete Social Media Solution</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    We handle everything so you can focus on what you do best - closing loans.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-rmg-blue mb-4">Standard Package</h3>
-                    <p class="text-gray-600 mb-6">Perfect for loan officers who need consistent, professional content to build their brand and generate leads.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">10 Custom-Designed Posts/Month</h4>
-                                <p class="text-gray-600 text-sm">Across Facebook, LinkedIn, and Instagram</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Curated Content Strategy</h4>
-                                <p class="text-gray-600 text-sm">Educational insights, market updates, local community, trust-building 'about us' posts</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Profile Setup & Optimization</h4>
-                                <p class="text-gray-600 text-sm">We'll make sure your profiles are professional and complete</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Monthly Content Calendar</h4>
-                                <p class="text-gray-600 text-sm">See what's coming up and provide feedback</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Basic Comment Monitoring</h4>
-                                <p class="text-gray-600 text-sm">We'll keep an eye on engagement</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md pricing-popular">
-                    <h3 class="text-2xl font-bold text-rmg-blue mb-4">Premium Package</h3>
-                    <p class="text-gray-600 mb-6">For loan officers serious about dominating their market with video content and advanced lead generation.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Everything in Standard</h4>
-                                <p class="text-gray-600 text-sm">Plus these powerful upgrades</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">4 Videos/Month</h4>
-                                <p class="text-gray-600 text-sm">Market updates, client milestones, testimonials, educational content</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Advanced Strategy</h4>
-                                <p class="text-gray-600 text-sm">Inbound lead CTAs, lead magnet promotion, strategic support</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Priority Support</h4>
-                                <p class="text-gray-600 text-sm">Faster response times and strategic consultations</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue mt-1 mr-3">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Performance Analytics</h4>
-                                <p class="text-gray-600 text-sm">Detailed reports on what's working and why</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="#pricing" class="bg-rmg-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300">
-                    Choose Your Plan & Get Started
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Mortgage Loan Officers Choose Redline</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Our mortgage-specific approach delivers real results for loan officers nationwide.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-4xl mb-4 feature-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mortgage Industry Experts</h3>
-                    <p class="text-gray-600">
-                        We speak mortgage. Our content is crafted by professionals who understand loan officer challenges and compliance requirements.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-4xl mb-4 feature-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Conversion-First Approach</h3>
-                    <p class="text-gray-600">
-                        Every post is designed to build trust and generate leads, not just vanity metrics.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-4xl mb-4 feature-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">High-Touch Support</h3>
-                    <p class="text-gray-600">
-                        Especially in our Premium package, you get strategic guidance, not just content.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-4xl mb-4 feature-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Proven Framework</h3>
-                    <p class="text-gray-600">
-                        Our system has helped hundreds of loan officers attract more clients.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-4xl mb-4 feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Time Savings</h3>
-                    <p class="text-gray-600">
-                        Reclaim 10+ hours per month you'd spend creating content.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-4xl mb-4 feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Compliance Peace of Mind</h3>
-                    <p class="text-gray-600">
-                        Sleep easy knowing your content meets all regulatory requirements.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Real Loan Officers, Real Results</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Don't just take our word for it. Here's what our clients say.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg testimonial-card">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">
-                        "Greg Gale went from 1 lead/month to 11 appointments in 3 months with Redline! The video content in the Premium package has been a game-changer for my business."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Greg Gale" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">Greg Gale</h4>
-                            <p class="text-gray-600 text-sm">Senior Loan Officer</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg testimonial-card">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">
-                        "I was skeptical about social media ROI, but Redline proved me wrong. I've closed 3 loans directly from their content in the last quarter. Worth every penny."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-gray-600 text-sm">Mortgage Advisor</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg testimonial-card">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">
-                        "The compliance peace of mind alone is worth it. Plus, my referral partners actually comment on and share my posts now. My visibility has skyrocketed."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">Michael Chen</h4>
-                            <p class="text-gray-600 text-sm">Branch Manager</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Simple, Transparent Pricing</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Choose the package that fits your goals. Cancel anytime.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-50 p-8 rounded-lg pricing-card">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Standard</h3>
-                    <p class="text-gray-600 mb-6">Perfect for establishing your professional presence</p>
-                    
-                    <div class="text-4xl font-bold text-rmg-blue mb-6">$297<span class="text-lg font-normal text-gray-600">/month</span></div>
-                    
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>10 Custom Posts/Month</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Facebook, LinkedIn, Instagram</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Curated Content Strategy</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Profile Optimization</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Monthly Content Calendar</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Basic Comment Monitoring</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#contact" class="block w-full bg-rmg-blue hover:bg-blue-600 text-white text-center font-bold py-3 px-6 rounded-lg transition duration-300">
-                        Get Started
-                    </a>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg pricing-card pricing-popular">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Premium</h3>
-                            <p class="text-gray-600 mb-6">For serious lead generation with video</p>
-                        </div>
-                        <span class="bg-rmg-blue text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
-                    </div>
-                    
-                    <div class="text-4xl font-bold text-rmg-blue mb-6">$397<span class="text-lg font-normal text-gray-600">/month</span></div>
-                    
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Everything in Standard</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>4 Videos/Month</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Advanced Lead Strategy</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Inbound Lead CTAs</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Lead Magnet Promotion</span>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="text-green-500 mr-2">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Priority Support</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#contact" class="block w-full bg-rmg-red hover:bg-red-700 text-white text-center font-bold py-3 px-6 rounded-lg transition duration-300">
-                        Choose Premium
-                    </a>
-                </div>
-            </div>
-            
-            <div class="mt-12 bg-rmg-blue bg-opacity-10 p-6 rounded-lg max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-3/4 mb-4 md:mb-0">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Not Sure Which Plan Is Right For You?</h3>
-                        <p class="text-gray-600">
-                            Schedule a free 15-minute strategy call with our team. We'll assess your needs and recommend the best approach.
-                        </p>
-                    </div>
-                    <div class="md:w-1/4 text-center md:text-right">
-                        <a href="#contact" class="bg-rmg-blue hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300">
-                            Book a Call
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantee -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/4 mb-6 md:mb-0 text-center">
-                        <div class="w-20 h-20 bg-rmg-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto">
-                            <i class="fas fa-shield-alt text-rmg-blue text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="md:w-3/4 text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">14-Day Satisfaction Guarantee</h3>
-                        <p class="text-gray-600">
-                            We're confident you'll love our service. If you're not completely satisfied within the first 14 days, we'll refund your first month's payment, no questions asked.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Get answers to common questions about our social media management service.
-                </p>
-            </div>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
-                        <span class="text-lg font-medium text-gray-800">Can't I just do this myself?</span>
-                        <i class="fas fa-chevron-down text-rmg-blue"></i>
-                    </button>
-                    <div class="faq-answer p-6 bg-white hidden">
-                        <p class="text-gray-600">
-                            You absolutely can, but most loan officers find they lose valuable time trying to create content consistently. Our clients typically save 10+ hours per month by outsourcing to us. Plus, our mortgage-specific expertise means your content will be more effective than DIY attempts.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
-                        <span class="text-lg font-medium text-gray-800">Isn't this expensive?</span>
-                        <i class="fas fa-chevron-down text-rmg-blue"></i>
-                    </button>
-                    <div class="faq-answer p-6 bg-white hidden">
-                        <p class="text-gray-600">
-                            Consider the cost of not having an effective social media presence or the hours you'd spend trying to do it yourself. Our Premium clients typically see a return of 3-5x their investment in closed loans. One additional loan per year more than covers the entire annual cost.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
-                        <span class="text-lg font-medium text-gray-800">Does social media really generate mortgage leads?</span>
-                        <i class="fas fa-chevron-down text-rmg-blue"></i>
-                    </button>
-                    <div class="faq-answer p-6 bg-white hidden">
-                        <p class="text-gray-600">
-                            With our mortgage-specific strategy, absolutely. Generic social media management often fails, but our content is designed to build trust and generate inquiries from potential borrowers and referral partners. Many clients report loans closed directly from our content.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
-                        <span class="text-lg font-medium text-gray-800">What if I've tried social media management before without results?</span>
-                        <i class="fas fa-chevron-down text-rmg-blue"></i>
-                    </button>
-                    <div class="faq-answer p-6 bg-white hidden">
-                        <p class="text-gray-600">
-                            Most social media services take a generic approach. We're different because we specialize exclusively in mortgage professionals. Our content speaks directly to homebuyers and referral partners in a way that converts. That's why we offer a 14-day guarantee - we're confident you'll see the difference.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
-                        <span class="text-lg font-medium text-gray-800">How do you ensure compliance with mortgage regulations?</span>
-                        <i class="fas fa-chevron-down text-rmg-blue"></i>
-                    </button>
-                    <div class="faq-answer p-6 bg-white hidden">
-                        <p class="text-gray-600">
-                            Our team includes former mortgage professionals who understand compliance requirements. All content is reviewed for compliance before posting, and we stay current with regulatory changes. We'll never put your license at risk with questionable content.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition duration-300 flex justify-between items-center">
-                        <span class="text-lg font-medium text-gray-800">What's your cancellation policy?</span>
-                        <i class="fas fa-chevron-down text-rmg-blue"></i>
-                    </button>
-                    <div class="faq-answer p-6 bg-white hidden">
-                        <p class="text-gray-600">
-                            You can cancel anytime with 30 days notice. There are no long-term contracts or hidden fees. If you're not satisfied, we offer a 14-day money-back guarantee on your first month.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-rmg-blue">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get More Leads From Social Media?</h2>
-                <p class="text-xl text-blue-100 mb-8">
-                    Stop leaving money on the table with an inconsistent or ineffective social media presence.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#pricing" class="bg-white hover:bg-gray-100 text-rmg-blue font-bold py-3 px-8 rounded-lg inline-block transition duration-300">
-                        Choose Your Plan
-                    </a>
-                    <a href="#contact" class="bg-transparent hover:bg-blue-600 border-2 border-white text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300">
-                        Book a Strategy Call
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
-                <div class="w-20 h-1 bg-rmg-red mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Have questions? Want to discuss your specific needs? Reach out anytime.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue text-xl mt-1 mr-4">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Our Office</h4>
-                                <p class="text-gray-600">need your Information</p>
-                                <p class="text-gray-600">..</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue text-xl mt-1 mr-4">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Phone</h4>
-                                <p class="text-gray-600">need your number</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue text-xl mt-1 mr-4">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Email</h4>
-                                <p class="text-gray-600">info@redlinemktg.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-rmg-blue text-xl mt-1 mr-4">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Hours</h4>
-                                <p class="text-gray-600">Monday - Friday: 9am - 5pm PST</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-                    
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rmg-blue focus:border-transparent"></textarea>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" class="bg-rmg-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <img src="/logo.png" alt="Redline Marketing Group Logo" class="h-24 mb-4 bg-transparent">
-                    <p class="text-gray-400">
-                        Expert social media management for mortgage loan officers who want consistent leads without the hassle.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Results</a></li>
-                        <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-2 text-sm"></i>
-                            <span>need your number</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-2 text-sm"></i>
-                            <span>info@redlinemktg.com</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-gray-800">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
-                        &copy; 2025 Redline Marketing Group. All rights reserved.
-                    </p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Compliance</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+        // Gift icons mapping
+        function getGiftIcon(giftType) {
+            const icons = {
+                ring: '💍',
+                memory: '📷',
+                nameplate: '🏷️',
+                hijab: '🧕',
+                heart: '❤️',
+                book: '📖',
+                smile: '😊',
+                eyes: '👀',
+                shield: '🛡️',
+                prayer: '🕌',
+                music: '🎵',
+                hands: '🤲',
+                home: '🏠',
+                lamp: '💡',
+                clock: '⏳',
+                mosque: '🕌',
+                food: '🍲',
+                anchor: '⚓',
+                scroll: '📜',
+                eternity: '∞'
+            };
+            return icons[giftType] || '🎁';
+        }
 
-        // FAQ accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
+        // Data for all 20 steps
+        const steps = [
+            {
+                title: "My Soul's Beloved",
+                message: "Every atom of my being trembles with love for you. You are the sweetest poetry my heart could ever compose.",
+                gift: "heart",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Gaze",
+                message: "When your eyes meet mine, time stops. I see eternity in their depth, and my soul finds its refuge.",
+                gift: "eyes",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Secret Desires",
+                message: "I long for the night when I can whisper how beautiful you are as I trace the curves Allah has blessed you with.",
+                gift: "eternity",
+                bgEffect: "glow"
+            },
+            {
+                title: "Your Scent",
+                message: "The fragrance of your skin intoxicates me more than any perfume. One whiff and I'm drunk with desire.",
+                gift: "flowers",
+                bgEffect: "petals"
+            },
+            {
+                title: "Your Lips",
+                message: "That first halal kiss I will plant on your lips - how I dream of its sweetness, soft as rose petals yet burning with passion.",
+                gift: "kiss",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Your Touch",
+                message: "Even the most innocent brush of your finger against mine sends electric currents through my body.",
+                gift: "hands",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Voice",
+                message: "The melody of your voice lingers in my ear like the sweetest Quran recitation - I could listen to it forever.",
+                gift: "music",
+                bgEffect: "glow"
+            },
+            {
+                title: "Your Modesty",
+                message: "The way your hijab drapes around your face only increases my desire to unveil your beauty in halal ways.",
+                gift: "hijab",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Your Curves",
+                message: "The shape of your body under that abaya teases my imagination - what blessed forms Allah has created just for my eyes.",
+                gift: "forms",
+                bgEffect: "petals"
+            },
+            {
+                title: "Waiting for You",
+                message: "Every night I lie awake imagining your warmth beside me, your breath on my skin - the halal intimacy we'll share.",
+                gift: "bed",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Intimate Moments",
+                message: "I dream of the night I can finally explore every inch of your body with my lips, worshipping you like the treasure you are.",
+                gift: "lips",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Beauty",
+                message: "No sunrise compares to your radiance. You're Allah's masterpiece painted just for my eyes to adore.",
+                gift: "art",
+                bgEffect: "glow"
+            },
+            {
+                title: "Your Smile",
+                message: "When you smile, angels pause their tasbeeh. It's my personal glimpse of Jannah's joy.",
+                gift: "smile",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Your Strength",
+                message: "The strength in your delicate frame - carrying wisdom, faith and passion - makes me weak with admiration.",
+                gift: "strength",
+                bgEffect: "petals"
+            },
+            {
+                title: "Our Future Nights",
+                message: "I dream of lazy mornings tracing arabesques on your bare skin as sunlight filters through our bedroom curtains.",
+                gift: "mornings",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Your Passion",
+                message: "The fire in your eyes when you speak of your dreams makes me burn with desire to support and cherish you.",
+                gift: "fire",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Intelligence",
+                message: "Nothing is sexier than your brilliant mind - except perhaps when you let me see the playful, passionate woman beneath.",
+                gift: "mind",
+                bgEffect: "glow"
+            },
+            {
+                title: "Your Laughter",
+                message: "Your laughter is my favorite sound in this world, sweeter than birdsong at fajr, more uplifting than the adhan.",
+                gift: "joy",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Your Body",
+                message: "The dip of your waist, the curve of your hips - Allah crafted you perfectly to fit against me.",
+                gift: "body",
+                bgEffect: "petals"
+            },
+            {
+                title: "Our Wedding Night",
+                message: "How I yearn for that blessed evening when I can finally know you completely - body, mind and soul.",
+                gift: "wedding",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Your Secrets",
+                message: "What hidden desires lie beneath your modest exterior? I vow to uncover them all halal-ly and worship every one.",
+                gift: "desire",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Skin",
+                message: "The thought of your soft skin pressed against mine keeps me awake with longing for our halal union.",
+                gift: "touch",
+                bgEffect: "glow"
+            },
+            {
+                title: "Your Femininity",
+                message: "The way you move - with such grace and power - makes my pulse race every time.",
+                gift: "grace",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Bedroom Whispers",
+                message: "I imagine the sweet nothings we'll exchange in our most private moments - promises, prayers and praises.",
+                gift: "whispers",
+                bgEffect: "petals"
+            },
+            {
+                title: "Your Mystery",
+                message: "You're like a magnificent palace - each discovery of your depths more breathtaking than the last.",
+                gift: "palace",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Our Bed",
+                message: "Our future bed awaits - where we'll share laughter, stories, passion and worship under Allah's watch.",
+                gift: "future",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Surrender",
+                message: "The thought of you willingly giving yourself to me halal-ly makes my heart pound with awe and desire.",
+                gift: "trust",
+                bgEffect: "glow"
+            },
+            {
+                title: "Morning After",
+                message: "I dream of waking beside you - messy hair, sleep-soft eyes, and the contentment of being truly, halal-ly one.",
+                gift: "morning",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Your Modest Charms",
+                message: "The way your fingers peek from your sleeves, the accidental glimpse of ankle - you tease without trying.",
+                gift: "tease",
+                bgEffect: "petals"
+            },
+            {
+                title: "Private Dances",
+                message: "I long for the halal moments when you'll dance only for me, unveiled and unashamed in our sacred space.",
+                gift: "dance",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Your Kisses",
+                message: "I imagine your kisses - first shy, then growing bolder as our love deepens over years together.",
+                gift: "love",
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Warmth",
+                message: "Winter nights with you pressed close to share body heat - this simple joy I anticipate most.",
+                gift: "warmth",
+                bgEffect: "glow"
+            },
+            {
+                title: "Sacred Intimacy",
+                message: "Making love with you will be my greatest ibadah - worship through pleasure and connection.",
+                gift: "worship",
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Pregnancy",
+                message: "Seeing your body change as it carries our child - you'll be most beautiful glowing with motherhood.",
+                gift: "mother",
+                bgEffect: "petals"
+            },
+            {
+                title: "Growing Old",
+                message: "Your silver hair will be just as beautiful as your dark locks today - I'll adore you at every age.",
+                gift: "age",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Jannah Together",
+                message: "Our earthly passion is but a shadow of the bliss we'll share eternally in Paradise inshaAllah.",
+                gift: "jannah",
+                bgEffect: "stars"
+            },
+            {
+                title: "My Eternal Vow",
+                message: "I surrender my heart to you completely, my beloved. With every beat, it whispers your name. I pledge not just this life but all my existences to you - in every universe, in every dimension, my soul will always find yours. You are the love that transcends time, the miracle that defies logic. Let our love story become legend, whispered by the stars long after we're gone. I choose you today, tomorrow, and for all eternity - not just as my wife but as my destiny, my answered prayer, the very reason Allah breathed life into me. You are my beginning, my forever, and my perfect ending.",
+                gift: "eternity",
+                bgEffect: "glow"
+            },
+            {
+                title: "Our Sacred Bond",
+                message: "This love we share is written in the stars, ordained by the Divine. When our hands finally touch on our walimah, electricity will course through every vein. That first halal embrace will set my soul ablaze - the years of longing finally satisfied yet multiplied a thousandfold. I dream of the mornings when I'll wake to your scent on my skin, your breath mingling with mine, our hearts beating in perfect synchrony. Every inch of your being fascinates me - the curve of your smile, the fire in your eyes, the softness of your skin I've yet to explore. You are my greatest adventure, my most treasured secret, and my most profound worship.",
+                gift: "soul",
+                bgEffect: "hearts"
+            },
+            {
+                title: "Beyond Time",
+                message: "If I could rewrite history, I'd place our love at the center of every civilization. Paint us in hieroglyphics, carve our story in stone, weave our names into ancient tapestries. Let the universe remember how completely I adored you. When shaytan tried to divide us, our sabr became legendary. When distance tested us, our love grew ferocious. This isn't just romance - it's revolution, quiet yet earth-shattering. I promise to love you with the intensity of a thousand supernovas yet with the tenderness of dawn's first light. You deserve passion that shakes the heavens and devotion that outlasts the stars.",
+                gift: "cosmos",
+                bgEffect: "stars"
+            },
+            {
+                title: "Our Last Dance",
+                message: "When time has silvered our hair and softened our steps, I'll still reach for you in the dark with the same reverence as our first halal touch. Your wrinkles will be the sacred map of our adventures, each line a love letter written by time itself. Even when our hands tremble, they'll find each other with the same magnetic pull as when we were young. And when the angel of death comes - whether for me or for you - know this with certainty: I will be waiting at the gates of Jannah, not as an old man but as your eternal lover, radiant with youth, arms outstretched to receive you. There, beneath Allah's merciful gaze, our souls will dance again - not with the slow steps of age but with the boundless energy of eternal love. For this life is just our first meeting, habibti. The real romance begins when we meet again in gardens beneath which rivers flow.",
+                gift: "infinity",
+                bgEffect: "glow"
+            }
+        ];
+
+        // DOM elements
+        const stepContainer = document.getElementById('stepContainer');
+        const particlesContainer = document.getElementById('particles');
+        const flowersContainer = document.getElementById('flowers');
+        const heartsContainer = document.getElementById('hearts-container');
+        const finalCelebration = document.getElementById('finalCelebration');
+        const finalSparkles = document.getElementById('finalSparkles');
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const restartBtn = document.getElementById('restartBtn');
+
+        // Current step index
+        let currentStep = 0;
+
+        // Initialize the app
+        function init() {
+            createBackgroundElements();
+            showStep(currentStep);
+            setupEventListeners();
+        }
+
+        // Create floating background elements
+        function createBackgroundElements() {
+            // Create rose petals and kisses
+            for (let i = 0; i < 100; i++) { // Increased to 100 petals for more romance
+                // Rose petals
+                const petal = document.createElement('div');
+                petal.className = 'rose-petal';
+                petal.style.width = `${Math.random() * 50 + 30}px`; // Increased size range
+                petal.style.height = petal.style.width;
+                petal.style.left = `${Math.random() * 100}vw`;
+                petal.style.top = `-10vh`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                document.body.appendChild(petal);
                 
-                // Toggle answer visibility
-                answer.classList.toggle('hidden');
-                
-                // Rotate icon
-                if (answer.classList.contains('hidden')) {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                } else {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
+                // Kisses (added new elements)
+                if (i % 2 === 0) { // Create kisses for half the iterations
+                    const kiss = document.createElement('div');
+                    kiss.className = 'rose-petal kiss';
+                    kiss.style.width = `${Math.random() * 60 + 30}px`; // Larger size range
+                    kiss.style.height = kiss.style.width;
+                    kiss.style.left = `${Math.random() * 100}vw`;
+                    kiss.style.top = `-10vh`;
+                    kiss.style.animationDelay = `${Math.random() * 5 + 2}s`;
+                    kiss.style.backgroundImage = 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23ff69b4\'><path d=\'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z\'/></svg>")';
+                    document.body.appendChild(kiss);
                 }
-                
-                // Close other open answers
-                faqQuestions.forEach(q => {
-                    if (q !== question) {
-                        q.nextElementSibling.classList.add('hidden');
-                        q.querySelector('i').classList.remove('fa-chevron-up');
-                        q.querySelector('i').classList.add('fa-chevron-down');
-                    }
-                });
-            });
-        });
+            }
+            
+            // Create particles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = `${Math.random() * 5 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+            // Create flowers
+            const flowerColors = ['🌹', '🌹', '🌹', '🌸', '🌺']; // More roses
+            for (let i = 0; i < 15; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.style.fontSize = `${Math.random() * 20 + 10}px`;
+                flower.style.left = `${Math.random() * 100}vw`;
+                flower.style.top = `${Math.random() * 100}vh`;
+                flower.style.animationDelay = `${Math.random() * 5}s`;
+                flower.textContent = flowerColors[Math.floor(Math.random() * flowerColors.length)];
+                flowersContainer.appendChild(flower);
+            }
+        }
+
+        // Show a specific step
+        function showStep(stepIndex) {
+            if (stepIndex >= steps.length) {
+                showFinalCelebration();
+                return;
+            }
+
+            const step = steps[stepIndex];
+            
+            // Clear previous step
+            stepContainer.innerHTML = '';
+            
+            // Create step elements
+            const stepElement = document.createElement('div');
+            stepElement.className = 'message-card rounded-2xl p-8 w-full text-center transform transition-all duration-500';
+            
+            // Create title
+            const titleElement = document.createElement('h2');
+            titleElement.className = 'handwritten text-4xl md:text-5xl text-pink-300 mb-6';
+            titleElement.textContent = step.title;
+            
+            // Create message
+            const messageElement = document.createElement('p');
+            messageElement.className = 'text-lg md:text-xl mb-8 leading-relaxed';
+            messageElement.textContent = step.message;
+            
+            // Create gift box
+            const giftContainer = document.createElement('div');
+            giftContainer.className = 'relative my-8 flex justify-center';
+            
+            const giftBox = document.createElement('div');
+            giftBox.className = 'gift-box relative w-24 h-24 md:w-32 md:h-32 cursor-pointer';
+            giftBox.innerHTML = `
+                <div class="absolute inset-0 bg-pink-500 rounded-lg flex items-center justify-center text-4xl md:text-5xl">
+                    🎁
+                </div>
+                <div class="gift-content absolute inset-0 bg-purple-500 rounded-lg flex flex-col items-center justify-center text-white">
+                    <span class="text-4xl md:text-5xl">${getGiftIcon(step.gift)}</span>
+                    <span class="text-xs mt-2">Gift ${stepIndex + 1}</span>
+                </div>
+            `;
+            
+            // Create next button
+            const nextButton = document.createElement('button');
+            nextButton.className = 'btn-romantic text-white font-bold py-3 px-8 rounded-full text-lg mt-6';
+            nextButton.textContent = stepIndex === steps.length - 1 ? 'Final Promise' : 'Continue Our Journey';
+            
+            // Add elements to step
+            giftContainer.appendChild(giftBox);
+            stepElement.appendChild(titleElement);
+            stepElement.appendChild(messageElement);
+            stepElement.appendChild(giftContainer);
+            stepElement.appendChild(nextButton);
+            stepContainer.appendChild(stepElement);
+            
+            nextButton.addEventListener('click', function() {
+                currentStep++;
+                showStep(currentStep);
+            });
+            
+            // Trigger background effect
+            triggerBackgroundEffect(step.bgEffect);
+        }
+
+        // Show final celebration
+        function showFinalCelebration() {
+            finalCelebration.classList.remove('hidden');
+            createConfetti(100);
+            playCelebrationSound();
+        }
+
+        // Create hearts animation
+        function createHearts(count) {
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'hearts';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.width = `${Math.random() * 30 + 10}px`;
+                heart.style.height = heart.style.width;
+                heart.style.animation = `float ${Math.random() * 3 + 2}s linear forwards`;
+                heart.style.opacity = '1';
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                heartsContainer.appendChild(heart);
                 
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                // Remove heart after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 3000);
+            }
+        }
+
+        // Create confetti for final celebration
+        function createConfetti(count) {
+            finalSparkles.innerHTML = '';
+            const colors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
+            
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.top = `-10px`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.width = `${Math.random() * 10 + 5}px`;
+                confetti.style.height = `${Math.random() * 10 + 5}px`;
+                
+                finalSparkles.appendChild(confetti);
+                
+                // Animate confetti
+                setTimeout(() => {
+                    confetti.style.opacity = '1';
+                    confetti.style.transform = `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`;
+                    confetti.style.transition = `all ${Math.random() * 3 + 2}s linear`;
                     
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+
+        // Trigger background effects based on step
+        function triggerBackgroundEffect(effect) {
+            switch(effect) {
+                case 'stars':
+                    createStars();
+                    break;
+                case 'petals':
+                    createPetals();
+                    break;
+                case 'glow':
+                    document.body.classList.add('glow');
+                    setTimeout(() => document.body.classList.remove('glow'), 2000);
+                    break;
+                case 'sparkles':
+                    createSparkles();
+                    break;
+                case 'hearts':
+                    createHearts(15);
+                    break;
+            }
+        }
+
+        // Create stars effect
+        function createStars() {
+            const stars = document.createElement('div');
+            stars.className = 'absolute inset-0 overflow-hidden';
+            
+            for (let i = 0; i < 30; i++) {
+                const star = document.createElement('div');
+                star.className = 'absolute bg-white rounded-full';
+                star.style.width = `${Math.random() * 3 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.opacity = '0';
+                star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
+                
+                stars.appendChild(star);
+            }
+            
+            document.body.appendChild(stars);
+            
+            // Remove after animation
+            setTimeout(() => {
+                stars.remove();
+            }, 3000);
+        }
+
+        // Create petals effect
+        function createPetals() {
+            const petals = document.createElement('div');
+            petals.className = 'absolute inset-0 overflow-hidden';
+            
+            for (let i = 0; i < 20; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'absolute';
+                petal.style.fontSize = `${Math.random() * 20 + 10}px`;
+                petal.style.left = `${Math.random() * 100}%`;
+                petal.style.top = `-30px`;
+                petal.textContent = '🌸';
+                petal.style.opacity = '0';
+                petal.style.animation = `fall ${Math.random() * 5 + 3}s linear forwards`;
+                
+                petals.appendChild(petal);
+            }
+            
+            document.body.appendChild(petals);
+            
+            // Remove after animation
+            setTimeout(() => {
+                petals.remove();
+            }, 5000);
+        }
+
+        // Create sparkles effect
+        function createSparkles() {
+            const sparkles = document.createElement('div');
+            sparkles.className = 'absolute inset-0 overflow-hidden';
+            
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'absolute bg-yellow-200 rounded-full';
+                sparkle.style.width = `${Math.random() * 5 + 2}px`;
+                sparkle.style.height = sparkle.style.width;
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.opacity = '0';
+                sparkle.style.animation = `sparkle ${Math.random() * 1 + 0.5}s infinite alternate`;
+                
+                sparkles.appendChild(sparkle);
+            }
+            
+            document.body.appendChild(sparkles);
+            
+            // Remove after animation
+            setTimeout(() => {
+                sparkles.remove();
+            }, 2000);
+        }
+
+        // Play sparkle sound
+        function playSparkleSound() {
+            // In a real app, you would play an actual sound file here
+            console.log("Sparkle sound played");
+        }
+
+        // Play celebration sound
+        function playCelebrationSound() {
+            // In a real app, you would play an actual sound file here
+            console.log("Celebration sound played");
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Music toggle
+            musicToggle.addEventListener('click', function() {
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    musicToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>';
+                } else {
+                    bgMusic.pause();
+                    musicToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 011.414 1.414" /></svg>';
                 }
             });
-        });
+
+            // Download button
+            downloadBtn.addEventListener('click', function() {
+                // Create a PDF of all messages
+                const doc = new jsPDF();
+                doc.setFontSize(22);
+                doc.text('Our Love Story', 105, 20, null, null, 'center');
+                doc.setFontSize(16);
+                
+                let y = 40;
+                steps.forEach((step, index) => {
+                    if (y > 280) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    doc.setFontSize(18);
+                    doc.text(`${index + 1}. ${step.title}`, 20, y);
+                    y += 10;
+                    doc.setFontSize(12);
+                    const splitText = doc.splitTextToSize(step.message, 170);
+                    doc.text(splitText, 20, y + 5);
+                    y += splitText.length * 7 + 15;
+                });
+                
+                doc.save('Our_Love_Story.pdf');
+            });
+
+            // Restart button
+            restartBtn.addEventListener('click', function() {
+                currentStep = 0;
+                finalCelebration.classList.add('hidden');
+                showStep(currentStep);
+            });
+        }
+
+        // Add CSS animations dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @keyframes fall {
+                0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+                10% { opacity: 1; }
+                100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+            }
+            @keyframes sparkle {
+                0% { opacity: 0; transform: scale(0.5); }
+                100% { opacity: 1; transform: scale(1.5); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize the app
+        window.addEventListener('load', init);
     </script>
 </body>
 </html>
