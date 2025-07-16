@@ -77,8 +77,8 @@
             animation: glow 2s ease-in-out infinite alternate;
         }
         @keyframes glow {
-            from { box-shadow: 0 0 10px -10px #f687b3; }
-            to { box-shadow: 0 0 20px 5px #f687b3; }
+            from { box-shadow: 0 0 10px -10px #6743a1; }
+            to { box-shadow: 0 0 20px 5px #27079c; }
         }
         .btn-romantic {
             background: linear-gradient(45deg, #9a1f6a, #4a1e6a);
@@ -86,7 +86,7 @@
         }
         .btn-romantic:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(154, 31, 106, 0.3);
+            box-shadow: 0 10px 20px rgb(242, 159, 25);
         }
         .hearts {
             position: absolute;
@@ -100,7 +100,7 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: #f00;
+            background-color: rgb(110, 47, 47);
             opacity: 0;
         }
     </style>
@@ -126,9 +126,9 @@
             </svg>
         </button>
         <audio id="bgMusic" loop>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+            <source src="./song.mp3" type="audio/mpeg">
             <!-- Backup romantic flute music -->
-            <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-flute-623.mp3" type="audio/mpeg">
+            <source src="./song.mp3" type="audio/mpeg">
         </audio>
     </div>
 
@@ -179,239 +179,165 @@
                 scroll: '📜',
                 eternity: '∞'
             };
-            return icons[giftType] || '🎁';
+            return icons[giftType] || '💜';
         }
 
         // Data for all 20 steps
         const steps = [
-            {
-                title: "My Soul's Beloved",
-                message: "Every atom of my being trembles with love for you. You are the sweetest poetry my heart could ever compose.",
-                gift: "heart",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Gaze",
-                message: "When your eyes meet mine, time stops. I see eternity in their depth, and my soul finds its refuge.",
-                gift: "eyes",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Secret Desires",
-                message: "I long for the night when I can whisper how beautiful you are as I trace the curves Allah has blessed you with.",
-                gift: "eternity",
-                bgEffect: "glow"
-            },
-            {
-                title: "Your Scent",
-                message: "The fragrance of your skin intoxicates me more than any perfume. One whiff and I'm drunk with desire.",
-                gift: "flowers",
-                bgEffect: "petals"
-            },
-            {
-                title: "Your Lips",
-                message: "That first halal kiss I will plant on your lips - how I dream of its sweetness, soft as rose petals yet burning with passion.",
-                gift: "kiss",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Your Touch",
-                message: "Even the most innocent brush of your finger against mine sends electric currents through my body.",
-                gift: "hands",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Voice",
-                message: "The melody of your voice lingers in my ear like the sweetest Quran recitation - I could listen to it forever.",
-                gift: "music",
-                bgEffect: "glow"
-            },
-            {
-                title: "Your Modesty",
-                message: "The way your hijab drapes around your face only increases my desire to unveil your beauty in halal ways.",
-                gift: "hijab",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Your Curves",
-                message: "The shape of your body under that abaya teases my imagination - what blessed forms Allah has created just for my eyes.",
-                gift: "forms",
-                bgEffect: "petals"
-            },
-            {
-                title: "Waiting for You",
-                message: "Every night I lie awake imagining your warmth beside me, your breath on my skin - the halal intimacy we'll share.",
-                gift: "bed",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Intimate Moments",
-                message: "I dream of the night I can finally explore every inch of your body with my lips, worshipping you like the treasure you are.",
-                gift: "lips",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Beauty",
-                message: "No sunrise compares to your radiance. You're Allah's masterpiece painted just for my eyes to adore.",
-                gift: "art",
-                bgEffect: "glow"
-            },
-            {
-                title: "Your Smile",
-                message: "When you smile, angels pause their tasbeeh. It's my personal glimpse of Jannah's joy.",
-                gift: "smile",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Your Strength",
-                message: "The strength in your delicate frame - carrying wisdom, faith and passion - makes me weak with admiration.",
-                gift: "strength",
-                bgEffect: "petals"
-            },
-            {
-                title: "Our Future Nights",
-                message: "I dream of lazy mornings tracing arabesques on your bare skin as sunlight filters through our bedroom curtains.",
-                gift: "mornings",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Your Passion",
-                message: "The fire in your eyes when you speak of your dreams makes me burn with desire to support and cherish you.",
-                gift: "fire",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Intelligence",
-                message: "Nothing is sexier than your brilliant mind - except perhaps when you let me see the playful, passionate woman beneath.",
-                gift: "mind",
-                bgEffect: "glow"
-            },
-            {
-                title: "Your Laughter",
-                message: "Your laughter is my favorite sound in this world, sweeter than birdsong at fajr, more uplifting than the adhan.",
-                gift: "joy",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Your Body",
-                message: "The dip of your waist, the curve of your hips - Allah crafted you perfectly to fit against me.",
-                gift: "body",
-                bgEffect: "petals"
-            },
-            {
-                title: "Our Wedding Night",
-                message: "How I yearn for that blessed evening when I can finally know you completely - body, mind and soul.",
-                gift: "wedding",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Your Secrets",
-                message: "What hidden desires lie beneath your modest exterior? I vow to uncover them all halal-ly and worship every one.",
-                gift: "desire",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Skin",
-                message: "The thought of your soft skin pressed against mine keeps me awake with longing for our halal union.",
-                gift: "touch",
-                bgEffect: "glow"
-            },
-            {
-                title: "Your Femininity",
-                message: "The way you move - with such grace and power - makes my pulse race every time.",
-                gift: "grace",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Bedroom Whispers",
-                message: "I imagine the sweet nothings we'll exchange in our most private moments - promises, prayers and praises.",
-                gift: "whispers",
-                bgEffect: "petals"
-            },
-            {
-                title: "Your Mystery",
-                message: "You're like a magnificent palace - each discovery of your depths more breathtaking than the last.",
-                gift: "palace",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Our Bed",
-                message: "Our future bed awaits - where we'll share laughter, stories, passion and worship under Allah's watch.",
-                gift: "future",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Surrender",
-                message: "The thought of you willingly giving yourself to me halal-ly makes my heart pound with awe and desire.",
-                gift: "trust",
-                bgEffect: "glow"
-            },
-            {
-                title: "Morning After",
-                message: "I dream of waking beside you - messy hair, sleep-soft eyes, and the contentment of being truly, halal-ly one.",
-                gift: "morning",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Your Modest Charms",
-                message: "The way your fingers peek from your sleeves, the accidental glimpse of ankle - you tease without trying.",
-                gift: "tease",
-                bgEffect: "petals"
-            },
-            {
-                title: "Private Dances",
-                message: "I long for the halal moments when you'll dance only for me, unveiled and unashamed in our sacred space.",
-                gift: "dance",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Your Kisses",
-                message: "I imagine your kisses - first shy, then growing bolder as our love deepens over years together.",
-                gift: "love",
-                bgEffect: "stars"
-            },
-            {
-                title: "Your Warmth",
-                message: "Winter nights with you pressed close to share body heat - this simple joy I anticipate most.",
-                gift: "warmth",
-                bgEffect: "glow"
-            },
-            {
-                title: "Sacred Intimacy",
-                message: "Making love with you will be my greatest ibadah - worship through pleasure and connection.",
-                gift: "worship",
-                bgEffect: "sparkles"
-            },
-            {
-                title: "Pregnancy",
-                message: "Seeing your body change as it carries our child - you'll be most beautiful glowing with motherhood.",
-                gift: "mother",
-                bgEffect: "petals"
-            },
-            {
-                title: "Growing Old",
-                message: "Your silver hair will be just as beautiful as your dark locks today - I'll adore you at every age.",
-                gift: "age",
-                bgEffect: "hearts"
-            },
-            {
-                title: "Jannah Together",
-                message: "Our earthly passion is but a shadow of the bliss we'll share eternally in Paradise inshaAllah.",
-                gift: "jannah",
-                bgEffect: "stars"
-            },
-            {
-                title: "My Eternal Vow",
-                message: "I surrender my heart to you completely, my beloved. With every beat, it whispers your name. I pledge not just this life but all my existences to you - in every universe, in every dimension, my soul will always find yours. You are the love that transcends time, the miracle that defies logic. Let our love story become legend, whispered by the stars long after we're gone. I choose you today, tomorrow, and for all eternity - not just as my wife but as my destiny, my answered prayer, the very reason Allah breathed life into me. You are my beginning, my forever, and my perfect ending.",
-                gift: "eternity",
-                bgEffect: "glow"
-            },
-            {
-                title: "Our Sacred Bond",
-                message: "This love we share is written in the stars, ordained by the Divine. When our hands finally touch on our walimah, electricity will course through every vein. That first halal embrace will set my soul ablaze - the years of longing finally satisfied yet multiplied a thousandfold. I dream of the mornings when I'll wake to your scent on my skin, your breath mingling with mine, our hearts beating in perfect synchrony. Every inch of your being fascinates me - the curve of your smile, the fire in your eyes, the softness of your skin I've yet to explore. You are my greatest adventure, my most treasured secret, and my most profound worship.",
-                gift: "soul",
-                bgEffect: "hearts"
-            },
+      
+  {
+    title: "First Sight, Forever Flame",
+    message: "You were seated on that lab chair, unaware of the storm you stirred in my heart. In that single moment, love etched your name into my soul.",
+    gift: "memory", // 📷
+    bgEffect: "stars"
+  },
+  {
+    title: "Eyes That Ruined Me",
+    message: "Your eyes didn't just meet mine—they melted time, silenced the world, and made me yours before either of us spoke a word.",
+    gift: "eyes", // 👀
+    bgEffect: "sparkles"
+  },
+  {
+    title: "Veil of Desire",
+    message: "That abaya you wore wrapped you in grace—and mystery. You awakened in me a craving not for your body, but for every breath you take.",
+    gift: "hijab", // 🧕
+    bgEffect: "glow"
+  },
+  {
+    title: "Scent of Heaven",
+    message: "The moment your scent reached me, I inhaled desire. You smelled like a dream I never wanted to wake from.",
+    gift: "scroll", // 📜 (symbolic for hidden essence)
+    bgEffect: "petals"
+  },
+  {
+    title: "Whispered Kisses",
+    message: "My lips long to whisper secrets against yours—slowly, softly—until words disappear and only our breath remains.",
+    gift: "heart", // ❤️
+    bgEffect: "hearts"
+  },
+  {
+    title: "Touch Me Once",
+    message: "A single touch from you could collapse my universe. I ache for the warmth of your fingers threading into mine.",
+    gift: "hands", // 🤲
+    bgEffect: "stars"
+  },
+  {
+    title: "Your Voice, My Melody",
+    message: "Your voice isn’t sound—it’s a spell. Every syllable you speak plays like a forbidden song I never want to stop hearing.",
+    gift: "music", // 🎵
+    bgEffect: "glow"
+  },
+  {
+    title: "That Smile... God, That Smile",
+    message: "Your smile? It's the kind that ruins men. It's the kind that made me fall and never once want to get back up.",
+    gift: "smile", // 😊
+    bgEffect: "sparkles"
+  },
+  {
+    title: "Curves and Chaos",
+    message: "The curve of your waist, the sway of your step—how effortlessly you turn modesty into madness inside me.",
+    gift: "shield", // 🛡️ (symbolic for modesty)
+    bgEffect: "petals"
+  },
+  {
+    title: "Sleepless For You",
+    message: "I lie awake craving the night you’ll sleep beside me—your warmth, your breath, your body tangled in mine.",
+    gift: "clock", // ⏳
+    bgEffect: "hearts"
+  },
+  {
+    title: "Softest Skin, Deepest Sin",
+    message: "I haven't touched your skin, yet I dream of it nightly—how my hands would memorize its map like holy scripture.",
+    gift: "scroll", // 📜
+    bgEffect: "stars"
+  },
+  {
+    title: "Your Modesty, My Madness",
+    message: "Even your silence seduces. Even the glimpse of your wrist drives me wild. You don’t flaunt, and yet I burn.",
+    gift: "shield", // 🛡️
+    bgEffect: "glow"
+  },
+  {
+    title: "My Hidden Hunger",
+    message: "I want to explore every inch of your body with reverence and fire—both pilgrim and poet, writing sonnets on your skin.",
+    gift: "book", // 📖
+    bgEffect: "sparkles"
+  },
+  {
+    title: "Love in Your Laughter",
+    message: "Your laughter is chaos wrapped in sunshine. It pulls me in like gravity and holds me like a prayer.",
+    gift: "lamp", // 💡
+    bgEffect: "petals"
+  },
+  {
+    title: "Mornings with You",
+    message: "Lazy sunlight, tangled sheets, your sleepy smile—this is how I want every morning to begin. With you. Always you.",
+    gift: "home", // 🏠
+    bgEffect: "hearts"
+  },
+  {
+    title: "Fire in Your Eyes",
+    message: "Your eyes aren't just brown—they’re galaxies ablaze. I see storms, I see dreams, I see forever when you look at me.",
+    gift: "eyes", // 👀
+    bgEffect: "stars"
+  },
+  {
+    title: "Your Mind, My Obsession",
+    message: "Your intelligence turns me on more than curves ever could. You think like a queen, and that’s how I want to worship you.",
+    gift: "book", // 📖
+    bgEffect: "glow"
+  },
+  {
+    title: "Naked Without Touch",
+    message: "Even without touching you, I feel naked before you. Every heartbeat, every stare, strips me bare.",
+    gift: "nameplate", // 🏷️ (symbolic for exposed identity)
+    bgEffect: "sparkles"
+  },
+  {
+    title: "Future in Your Arms",
+    message: "One day, we’ll share a bed where dreams melt into breath, and your body becomes my entire definition of home.",
+    gift: "ring", // 💍
+    bgEffect: "petals"
+  },
+  {
+    title: "The Night I Take You",
+    message: "There will be a night where the moon blushes for us. When I finally undress your soul... and your body follows.",
+    gift: "anchor", // ⚓ (symbolic for intense longing)
+    bgEffect: "hearts"
+  },
+  {
+    title: "My Everything",
+    message: "You are not just my lover, Areej. You are my breath, my rhythm, the ache in my bones when you’re not near.",
+    gift: "heart", // ❤️
+    bgEffect: "stars"
+  },
+  {
+    title: "Our Fire",
+    message: "We’re not just love—we’re combustion. We’re everything poets fear and crave at once. We are wildfire.",
+    gift: "lamp", // 💡 (symbolic for burning fire)
+    bgEffect: "glow"
+  },
+  {
+    title: "Last Breath, Your Name",
+    message: "If I die with your name on my lips, I’ll have lived fully. You are the only afterlife I seek in this life.",
+    gift: "nameplate", // 🏷️
+    bgEffect: "sparkles"
+  },
+  {
+    title: "The Final Step",
+    message: "This journey through my heart was for you, Jan-e-Jahan. I’ll spend my life proving that every word was real, every feeling eternal.",
+    gift: "eternity", // ∞
+    bgEffect: "petals"
+  },
+  {
+    title: "My Eternal Vow",
+    message: "I love you wildly, shamelessly, endlessly. Not as a man loves a woman—but as fire loves oxygen. I am yours, Areej. Entirely. Eternally.",
+    gift: "eternity", // ∞
+    bgEffect: "glow"
+  }
+,
+
+
             {
                 title: "Beyond Time",
                 message: "If I could rewrite history, I'd place our love at the center of every civilization. Paint us in hieroglyphics, carve our story in stone, weave our names into ancient tapestries. Let the universe remember how completely I adored you. When shaytan tried to divide us, our sabr became legendary. When distance tested us, our love grew ferocious. This isn't just romance - it's revolution, quiet yet earth-shattering. I promise to love you with the intensity of a thousand supernovas yet with the tenderness of dawn's first light. You deserve passion that shakes the heavens and devotion that outlasts the stars.",
