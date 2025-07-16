@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <script>
         const { jsPDF } = window.jspdf;
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -17,18 +20,22 @@
             overflow-x: hidden;
             color: #fff;
         }
+
         .handwritten {
             font-family: 'Dancing Script', cursive;
         }
+
         .bg-romantic {
             background: linear-gradient(135deg, #0f0524 0%, #3a154f 25%, #892584 50%, #d63e72 75%, #ff7b93 100%);
         }
+
         .particle {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 50%;
             pointer-events: none;
         }
+
         .flower {
             position: absolute;
             background-size: contain;
@@ -37,13 +44,29 @@
             opacity: 0.7;
             animation: float 6s ease-in-out infinite;
         }
+
         @keyframes float {
-            0% { transform: translateY(0) rotate(0deg) scale(1); }
-            25% { transform: translateY(-10px) rotate(2deg) scale(1.05); }
-            50% { transform: translateY(-20px) rotate(5deg) scale(1.1); }
-            75% { transform: translateY(-10px) rotate(2deg) scale(1.05); }
-            100% { transform: translateY(0) rotate(0deg) scale(1); }
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(2deg) scale(1.05);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg) scale(1.1);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(2deg) scale(1.05);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
         }
+
         .rose-petal {
             position: absolute;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff69b4" d="M50,15 C60,0 80,5 85,20 C90,35 70,50 50,65 C30,50 10,35 15,20 C20,5 40,0 50,15 Z"/></svg>');
@@ -52,42 +75,80 @@
             opacity: 0.8;
             animation: petal-fall 8s linear infinite;
         }
+
         .kiss {
             animation-name: petal-fall-kiss;
             z-index: 1;
         }
+
         @keyframes petal-fall {
-            0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            100% { transform: translate(calc(50vw - 50%), 100vh) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translate(0, -10vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(calc(50vw - 50%), 100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
+
         @keyframes petal-fall-kiss {
-            0% { transform: translate(0, -10vh) rotate(0deg) scale(0.5); opacity: 0; }
-            10% { opacity: 1; transform: scale(1.2); }
-            50% { transform: scale(1.5); }
-            100% { transform: translate(calc(50vw - 50%), 100vh) rotate(360deg) scale(0.8); opacity: 0; }
+            0% {
+                transform: translate(0, -10vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+
+            100% {
+                transform: translate(calc(50vw - 50%), 100vh) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
         }
+
         .message-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
+
         .glow {
             animation: glow 2s ease-in-out infinite alternate;
         }
+
         @keyframes glow {
-            from { box-shadow: 0 0 10px -10px #6743a1; }
-            to { box-shadow: 0 0 20px 5px #27079c; }
+            from {
+                box-shadow: 0 0 10px -10px #6743a1;
+            }
+
+            to {
+                box-shadow: 0 0 20px 5px #27079c;
+            }
         }
+
         .btn-romantic {
             background: linear-gradient(45deg, #9a1f6a, #4a1e6a);
             transition: all 0.3s ease;
         }
+
         .btn-romantic:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgb(242, 159, 25);
         }
+
         .hearts {
             position: absolute;
             width: 20px;
@@ -96,6 +157,7 @@
             pointer-events: none;
             opacity: 0;
         }
+
         .confetti {
             position: absolute;
             width: 10px;
@@ -105,12 +167,13 @@
         }
     </style>
 </head>
+
 <body class="bg-romantic min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
     <!-- Background elements -->
     <div id="particles"></div>
     <div id="flowers"></div>
     <div id="hearts-container"></div>
-    
+
     <!-- Romantic Verse -->
     <div class="absolute top-4 left-4 z-50 text-pink-200 italic handwritten text-sm md:text-base">
         "From my first glance, I measured eternity<br>
@@ -121,15 +184,39 @@
     <!-- Audio Toggle -->
     <div class="absolute top-4 right-4 z-50">
         <button id="musicToggle" class="bg-pink-600 hover:bg-pink-700 text-white rounded-full p-3 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 011.414 1.414" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 011.414 1.414" />
             </svg>
         </button>
         <audio id="bgMusic" loop>
-            <source src="./song.mp3" type="audio/mpeg">
-            <!-- Backup romantic flute music -->
-            <source src="./song.mp3" type="audio/mpeg">
+            <source src="./song1.mp3" type="audio/mpeg">
+            <source src="./song2.mp3" type="audio/mpeg">
+            <source src="./song3.mp3" type="audio/mpeg">
         </audio>
+        <script>
+            // Randomly select one of three songs on load
+            window.addEventListener('DOMContentLoaded', function () {
+            const bgMusic = document.getElementById('bgMusic');
+            const sources = [
+                './song1.mp3',
+                './song2.mp3',
+                './song3.mp3',
+                './song4.mp3',
+                './song5.mp3'
+                
+            ];
+            const randomSrc = sources[Math.floor(Math.random() * sources.length)];
+            // Remove all sources and set one randomly
+            while (bgMusic.firstChild) bgMusic.removeChild(bgMusic.firstChild);
+            const sourceElem = document.createElement('source');
+            sourceElem.src = randomSrc;
+            sourceElem.type = 'audio/mpeg';
+            bgMusic.appendChild(sourceElem);
+            bgMusic.load();
+            });
+        </script>
     </div>
 
     <!-- Main Content -->
@@ -140,11 +227,16 @@
     </div>
 
     <!-- Final Celebration (hidden initially) -->
-    <div id="finalCelebration" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <div id="finalCelebration"
+        class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
         <div class="text-center p-8 max-w-4xl">
-            <h1 class="handwritten text-2xl md:text-7xl text-pink-400 mb-6 glow">Happy Birthday My Eternal Love Areej Fatima MY LOVE Jan E jahan 💜انت الحیات💜 </h1>
+            <h1 class="handwritten text-2xl md:text-7xl text-pink-400 mb-6 glow">Happy Birthday My Eternal Love Areej
+                Fatima MY LOVE Jan E jahan 💜انت الحیات💜 </h1>
             <div id="finalSparkles" class="my-8"></div>
-            <p class="text-xl mb-8 handwritten">"My soul recognizes yours like the moon recognizes its ocean - drawn in inevitable tide. On this day when the universe first received your light, I celebrate the miracle of your existence. May Allah bless every step with grace, every breath with joy, and every moment with love as infinite as my devotion to you - today and for all the beautiful tomorrows we'll share together."</p>
+            <p class="text-xl mb-8 handwritten">"My soul recognizes yours like the moon recognizes its ocean - drawn in
+                inevitable tide. On this day when the universe first received your light, I celebrate the miracle of
+                your existence. May Allah bless every step with grace, every breath with joy, and every moment with love
+                as infinite as my devotion to you - today and for all the beautiful tomorrows we'll share together."</p>
             <button id="downloadBtn" class="btn-romantic text-white font-bold py-3 px-6 rounded-full text-lg mb-4">
                 Download Our Love Letter
             </button>
@@ -184,169 +276,181 @@
 
         // Data for all 20 steps
         const steps = [
-      
-  {
-    title: "First Sight, Forever Flame",
-    message: "You were seated on that lab chair, unaware of the storm you stirred in my heart. In that single moment, love etched your name into my soul.",
-    gift: "memory", // 📷
-    bgEffect: "stars"
-  },
-  {
-    title: "Eyes That Ruined Me",
-    message: "Your eyes didn't just meet mine—they melted time, silenced the world, and made me yours before either of us spoke a word.",
-    gift: "eyes", // 👀
-    bgEffect: "sparkles"
-  },
-  {
-    title: "Veil of Desire",
-    message: "That abaya you wore wrapped you in grace—and mystery. You awakened in me a craving not for your body, but for every breath you take.",
-    gift: "hijab", // 🧕
-    bgEffect: "glow"
-  },
-  {
-    title: "Scent of Heaven",
-    message: "The moment your scent reached me, I inhaled desire. You smelled like a dream I never wanted to wake from.",
-    gift: "scroll", // 📜 (symbolic for hidden essence)
-    bgEffect: "petals"
-  },
-  {
-    title: "Whispered Kisses",
-    message: "My lips long to whisper secrets against yours—slowly, softly—until words disappear and only our breath remains.",
-    gift: "heart", // ❤️
-    bgEffect: "hearts"
-  },
-  {
-    title: "Touch Me Once",
-    message: "A single touch from you could collapse my universe. I ache for the warmth of your fingers threading into mine.",
-    gift: "hands", // 🤲
-    bgEffect: "stars"
-  },
-  {
-    title: "Your Voice, My Melody",
-    message: "Your voice isn’t sound—it’s a spell. Every syllable you speak plays like a forbidden song I never want to stop hearing.",
-    gift: "music", // 🎵
-    bgEffect: "glow"
-  },
-  {
-    title: "That Smile... God, That Smile",
-    message: "Your smile? It's the kind that ruins men. It's the kind that made me fall and never once want to get back up.",
-    gift: "smile", // 😊
-    bgEffect: "sparkles"
-  },
-  {
-    title: "Curves and Chaos",
-    message: "The curve of your waist, the sway of your step—how effortlessly you turn modesty into madness inside me.",
-    gift: "shield", // 🛡️ (symbolic for modesty)
-    bgEffect: "petals"
-  },
-  {
-    title: "Sleepless For You",
-    message: "I lie awake craving the night you’ll sleep beside me—your warmth, your breath, your body tangled in mine.",
-    gift: "clock", // ⏳
-    bgEffect: "hearts"
-  },
-  {
-    title: "Softest Skin, Deepest Sin",
-    message: "I haven't touched your skin, yet I dream of it nightly—how my hands would memorize its map like holy scripture.",
-    gift: "scroll", // 📜
-    bgEffect: "stars"
-  },
-  {
-    title: "Your Modesty, My Madness",
-    message: "Even your silence seduces. Even the glimpse of your wrist drives me wild. You don’t flaunt, and yet I burn.",
-    gift: "shield", // 🛡️
-    bgEffect: "glow"
-  },
-  {
-    title: "My Hidden Hunger",
-    message: "I want to explore every inch of your body with reverence and fire—both pilgrim and poet, writing sonnets on your skin.",
-    gift: "book", // 📖
-    bgEffect: "sparkles"
-  },
-  {
-    title: "Love in Your Laughter",
-    message: "Your laughter is chaos wrapped in sunshine. It pulls me in like gravity and holds me like a prayer.",
-    gift: "lamp", // 💡
-    bgEffect: "petals"
-  },
-  {
-    title: "Mornings with You",
-    message: "Lazy sunlight, tangled sheets, your sleepy smile—this is how I want every morning to begin. With you. Always you.",
-    gift: "home", // 🏠
-    bgEffect: "hearts"
-  },
-  {
-    title: "Fire in Your Eyes",
-    message: "Your eyes aren't just brown—they’re galaxies ablaze. I see storms, I see dreams, I see forever when you look at me.",
-    gift: "eyes", // 👀
-    bgEffect: "stars"
-  },
-  {
-    title: "Your Mind, My Obsession",
-    message: "Your intelligence turns me on more than curves ever could. You think like a queen, and that’s how I want to worship you.",
-    gift: "book", // 📖
-    bgEffect: "glow"
-  },
-  {
-    title: "Naked Without Touch",
-    message: "Even without touching you, I feel naked before you. Every heartbeat, every stare, strips me bare.",
-    gift: "nameplate", // 🏷️ (symbolic for exposed identity)
-    bgEffect: "sparkles"
-  },
-  {
-    title: "Future in Your Arms",
-    message: "One day, we’ll share a bed where dreams melt into breath, and your body becomes my entire definition of home.",
-    gift: "ring", // 💍
-    bgEffect: "petals"
-  },
-  {
-    title: "The Night I Take You",
-    message: "There will be a night where the moon blushes for us. When I finally undress your soul... and your body follows.",
-    gift: "anchor", // ⚓ (symbolic for intense longing)
-    bgEffect: "hearts"
-  },
-  {
-    title: "My Everything",
-    message: "You are not just my lover, Areej. You are my breath, my rhythm, the ache in my bones when you’re not near.",
-    gift: "heart", // ❤️
-    bgEffect: "stars"
-  },
-  {
-    title: "Our Fire",
-    message: "We’re not just love—we’re combustion. We’re everything poets fear and crave at once. We are wildfire.",
-    gift: "lamp", // 💡 (symbolic for burning fire)
-    bgEffect: "glow"
-  },
-  {
-    title: "Last Breath, Your Name",
-    message: "If I die with your name on my lips, I’ll have lived fully. You are the only afterlife I seek in this life.",
-    gift: "nameplate", // 🏷️
-    bgEffect: "sparkles"
-  },
-  {
-    title: "The Final Step",
-    message: "This journey through my heart was for you, Jan-e-Jahan. I’ll spend my life proving that every word was real, every feeling eternal.",
-    gift: "eternity", // ∞
-    bgEffect: "petals"
-  },
-  {
-    title: "My Eternal Vow",
-    message: "I love you wildly, shamelessly, endlessly. Not as a man loves a woman—but as fire loves oxygen. I am yours, Areej. Entirely. Eternally.",
-    gift: "eternity", // ∞
-    bgEffect: "glow"
-  }
-,
+
+            {
+                title: "First Sight, Forever Flame",
+                message: "You were seated on that lab chair, unaware of the storm you stirred in my heart. In that single moment, love etched your name into my soul.",
+                gift: "memory", // 📷
+                bgEffect: "stars"
+            },
+            {
+                title: "Eyes That Ruined Me",
+                message: "Your eyes didn't just meet mine—they melted time, silenced the world, and made me yours before either of us spoke a word.",
+                gift: "eyes", // 👀
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Veil of Desire",
+                message: "That abaya you wore wrapped you in grace—and mystery. You awakened in me a craving not for your body, but for every breath you take.",
+                gift: "hijab", // 🧕
+                bgEffect: "glow"
+            },
+            {
+                title: "Scent of Heaven",
+                message: "The moment your scent reached me, I inhaled desire. You smelled like a dream I never wanted to wake from.",
+                gift: "scroll", // 📜 (symbolic for hidden essence)
+                bgEffect: "petals"
+            },
+            {
+                title: "Whispered Kisses",
+                message: "My lips long to whisper secrets against yours—slowly, softly—until words disappear and only our breath remains.",
+                gift: "heart", // ❤️
+                bgEffect: "hearts"
+            },
+            {
+                title: "Touch Me Once",
+                message: "A single touch from you could collapse my universe. I ache for the warmth of your fingers threading into mine.",
+                gift: "hands", // 🤲
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Voice, My Melody",
+                message: "Your voice isn’t sound—it’s a spell. Every syllable you speak plays like a forbidden song I never want to stop hearing.",
+                gift: "music", // 🎵
+                bgEffect: "glow"
+            },
+            {
+                title: "That Smile... God, That Smile",
+                message: "Your smile? It's the kind that ruins men. It's the kind that made me fall and never once want to get back up.",
+                gift: "smile", // 😊
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Curves and Chaos",
+                message: "The curve of your waist, the sway of your step—how effortlessly you turn modesty into madness inside me.",
+                gift: "shield", // 🛡️ (symbolic for modesty)
+                bgEffect: "petals"
+            },
+            {
+                title: "Sleepless For You",
+                message: "I lie awake craving the night you’ll sleep beside me—your warmth, your breath, your body tangled in mine.",
+                gift: "clock", // ⏳
+                bgEffect: "hearts"
+            },
+            {
+                title: "Softest Skin, Deepest Sin",
+                message: "I haven't touched your skin, yet I dream of it nightly—how my hands would memorize its map like holy scripture.",
+                gift: "scroll", // 📜
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Modesty, My Madness",
+                message: "Even your silence seduces. Even the glimpse of your wrist drives me wild. You don’t flaunt, and yet I burn.",
+                gift: "shield", // 🛡️
+                bgEffect: "glow"
+            },
+            {
+                title: "My Hidden Hunger",
+                message: "I want to explore every inch of your body with reverence and fire—both pilgrim and poet, writing sonnets on your skin.",
+                gift: "book", // 📖
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Love in Your Laughter",
+                message: "Your laughter is chaos wrapped in sunshine. It pulls me in like gravity and holds me like a prayer.",
+                gift: "lamp", // 💡
+                bgEffect: "petals"
+            },
+            {
+                title: "Mornings with You",
+                message: "Lazy sunlight, tangled sheets, your sleepy smile—this is how I want every morning to begin. With you. Always you.",
+                gift: "home", // 🏠
+                bgEffect: "hearts"
+            },
+            {
+                title: "Fire in Your Eyes",
+                message: "Your eyes aren't just brown—they’re galaxies ablaze. I see storms, I see dreams, I see forever when you look at me.",
+                gift: "eyes", // 👀
+                bgEffect: "stars"
+            },
+            {
+                title: "Your Mind, My Obsession",
+                message: "Your intelligence turns me on more than curves ever could. You think like a queen, and that’s how I want to worship you.",
+                gift: "book", // 📖
+                bgEffect: "glow"
+            },
+            {
+                title: "Naked Without Touch",
+                message: "Even without touching you, I feel naked before you. Every heartbeat, every stare, strips me bare.",
+                gift: "nameplate", // 🏷️ (symbolic for exposed identity)
+                bgEffect: "sparkles"
+            },
+            {
+                title: "Future in Your Arms",
+                message: "One day, we’ll share a bed where dreams melt into breath, and your body becomes my entire definition of home.",
+                gift: "ring", // 💍
+                bgEffect: "petals"
+            },
+            {
+                title: "The Night I Take You",
+                message: "There will be a night where the moon blushes for us. When I finally undress your soul... and your body follows.",
+                gift: "anchor", // ⚓ (symbolic for intense longing)
+                bgEffect: "hearts"
+            },
+            {
+                title: "My Everything",
+                message: "You are not just my lover, Areej. You are my breath, my rhythm, the ache in my bones when you’re not near.",
+                gift: "heart", // ❤️
+                bgEffect: "stars"
+            },
+            {
+                title: "Our Fire",
+                message: "We’re not just love—we’re combustion. We’re everything poets fear and crave at once. We are wildfire.",
+                gift: "lamp", // 💡 (symbolic for burning fire)
+                bgEffect: "glow"
+            },
+            {
+                title: "Last Breath, Your Name",
+                message: "If I die with your name on my lips, I’ll have lived fully. You are the only afterlife I seek in this life.",
+                gift: "nameplate", // 🏷️
+                bgEffect: "sparkles"
+            },
+            {
+                title: "The Final Step",
+                message: "This journey through my heart was for you, Jan-e-Jahan. I’ll spend my life proving that every word was real, every feeling eternal.",
+                gift: "eternity", // ∞
+                bgEffect: "petals"
+            },
+            {
+                title: "My Eternal Vow",
+                message: "I love you wildly, shamelessly, endlessly. Not as a man loves a woman—but as fire loves oxygen. I am yours, Areej. Entirely. Eternally.",
+                gift: "eternity", // ∞
+                bgEffect: "glow"
+            }
+            ,
 
 
             {
                 title: "Beyond Time",
-                message: "If I could rewrite history, I'd place our love at the center of every civilization. Paint us in hieroglyphics, carve our story in stone, weave our names into ancient tapestries. Let the universe remember how completely I adored you. When shaytan tried to divide us, our sabr became legendary. When distance tested us, our love grew ferocious. This isn't just romance - it's revolution, quiet yet earth-shattering. I promise to love you with the intensity of a thousand supernovas yet with the tenderness of dawn's first light. You deserve passion that shakes the heavens and devotion that outlasts the stars.",
+                message: "If I could rewrite history, I'd place our love at the center of every civilization. Paint us in hieroglyphics", 
+                gift: "cosmos",
+                bgEffect: "stars"
+            },
+            {
+                title: "Beyond Time",
+                message: " carve our story in stone, weave our names into ancient tapestries. Let the universe remember how completely I adored you. When shaytan tried to divide us, our sabr became legendary. When distance tested us, our love grew ferocious. This isn't just romance - it's revolution, quiet yet earth-shattering. I promise to love you with the intensity of a thousand supernovas yet with the tenderness of dawn's first light. You deserve passion that shakes the heavens and devotion that outlasts the stars.",
                 gift: "cosmos",
                 bgEffect: "stars"
             },
             {
                 title: "Our Last Dance",
-                message: "When time has silvered our hair and softened our steps, I'll still reach for you in the dark with the same reverence as our first halal touch. Your wrinkles will be the sacred map of our adventures, each line a love letter written by time itself. Even when our hands tremble, they'll find each other with the same magnetic pull as when we were young. And when the angel of death comes - whether for me or for you - know this with certainty: I will be waiting at the gates of Jannah, not as an old man but as your eternal lover, radiant with youth, arms outstretched to receive you. There, beneath Allah's merciful gaze, our souls will dance again - not with the slow steps of age but with the boundless energy of eternal love. For this life is just our first meeting, habibti. The real romance begins when we meet again in gardens beneath which rivers flow.",
+                message: "When time has silvered our hair and softened our steps, I'll still reach for you in the dark with the same reverence as our first halal touch. Your wrinkles will be the sacred map of our adventures, each line a love letter written by time itself. Even when our hands tremble",
+                gift: "infinity",
+                bgEffect: "glow"
+            },
+            {
+                title: "Our Last Dance",
+                message: "they'll find each other with the same magnetic pull as when we were young. And when the angel of death comes - whether for me or for you - know this with certainty: I will be waiting at the gates of Jannah, not as an old man but as your eternal lover, radiant with youth, arms outstretched to receive you. There, beneath Allah's merciful gaze, our souls will dance again - not with the slow steps of age but with the boundless energy of eternal love. For this life is just our first meeting, habibti. The real romance begins when we meet again in gardens beneath which rivers flow.",
                 gift: "infinity",
                 bgEffect: "glow"
             }
@@ -387,7 +491,7 @@
                 petal.style.top = `-10vh`;
                 petal.style.animationDelay = `${Math.random() * 5}s`;
                 document.body.appendChild(petal);
-                
+
                 // Kisses (added new elements)
                 if (i % 2 === 0) { // Create kisses for half the iterations
                     const kiss = document.createElement('div');
@@ -401,7 +505,7 @@
                     document.body.appendChild(kiss);
                 }
             }
-            
+
             // Create particles
             for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
@@ -437,28 +541,28 @@
             }
 
             const step = steps[stepIndex];
-            
+
             // Clear previous step
             stepContainer.innerHTML = '';
-            
+
             // Create step elements
             const stepElement = document.createElement('div');
             stepElement.className = 'message-card rounded-2xl p-8 w-full text-center transform transition-all duration-500';
-            
+
             // Create title
             const titleElement = document.createElement('h2');
             titleElement.className = 'handwritten text-4xl md:text-5xl text-pink-300 mb-6';
             titleElement.textContent = step.title;
-            
+
             // Create message
             const messageElement = document.createElement('p');
             messageElement.className = 'text-lg md:text-xl mb-8 leading-relaxed';
             messageElement.textContent = step.message;
-            
+
             // Create gift box
             const giftContainer = document.createElement('div');
             giftContainer.className = 'relative my-8 flex justify-center';
-            
+
             const giftBox = document.createElement('div');
             giftBox.className = 'gift-box relative w-24 h-24 md:w-32 md:h-32 cursor-pointer';
             giftBox.innerHTML = `
@@ -470,12 +574,12 @@
                     <span class="text-xs mt-2">Gift ${stepIndex + 1}</span>
                 </div>
             `;
-            
+
             // Create next button
             const nextButton = document.createElement('button');
             nextButton.className = 'btn-romantic text-white font-bold py-3 px-8 rounded-full text-lg mt-6';
             nextButton.textContent = stepIndex === steps.length - 1 ? 'Final Promise' : 'Continue Our Journey';
-            
+
             // Add elements to step
             giftContainer.appendChild(giftBox);
             stepElement.appendChild(titleElement);
@@ -483,12 +587,12 @@
             stepElement.appendChild(giftContainer);
             stepElement.appendChild(nextButton);
             stepContainer.appendChild(stepElement);
-            
-            nextButton.addEventListener('click', function() {
+
+            nextButton.addEventListener('click', function () {
                 currentStep++;
                 showStep(currentStep);
             });
-            
+
             // Trigger background effect
             triggerBackgroundEffect(step.bgEffect);
         }
@@ -511,9 +615,9 @@
                 heart.style.height = heart.style.width;
                 heart.style.animation = `float ${Math.random() * 3 + 2}s linear forwards`;
                 heart.style.opacity = '1';
-                
+
                 heartsContainer.appendChild(heart);
-                
+
                 // Remove heart after animation
                 setTimeout(() => {
                     heart.remove();
@@ -525,7 +629,7 @@
         function createConfetti(count) {
             finalSparkles.innerHTML = '';
             const colors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
-            
+
             for (let i = 0; i < count; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
@@ -535,15 +639,15 @@
                 confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
                 confetti.style.width = `${Math.random() * 10 + 5}px`;
                 confetti.style.height = `${Math.random() * 10 + 5}px`;
-                
+
                 finalSparkles.appendChild(confetti);
-                
+
                 // Animate confetti
                 setTimeout(() => {
                     confetti.style.opacity = '1';
                     confetti.style.transform = `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`;
                     confetti.style.transition = `all ${Math.random() * 3 + 2}s linear`;
-                    
+
                     // Remove confetti after animation
                     setTimeout(() => {
                         confetti.remove();
@@ -554,7 +658,7 @@
 
         // Trigger background effects based on step
         function triggerBackgroundEffect(effect) {
-            switch(effect) {
+            switch (effect) {
                 case 'stars':
                     createStars();
                     break;
@@ -578,7 +682,7 @@
         function createStars() {
             const stars = document.createElement('div');
             stars.className = 'absolute inset-0 overflow-hidden';
-            
+
             for (let i = 0; i < 30; i++) {
                 const star = document.createElement('div');
                 star.className = 'absolute bg-white rounded-full';
@@ -588,12 +692,12 @@
                 star.style.top = `${Math.random() * 100}%`;
                 star.style.opacity = '0';
                 star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
-                
+
                 stars.appendChild(star);
             }
-            
+
             document.body.appendChild(stars);
-            
+
             // Remove after animation
             setTimeout(() => {
                 stars.remove();
@@ -604,7 +708,7 @@
         function createPetals() {
             const petals = document.createElement('div');
             petals.className = 'absolute inset-0 overflow-hidden';
-            
+
             for (let i = 0; i < 20; i++) {
                 const petal = document.createElement('div');
                 petal.className = 'absolute';
@@ -614,12 +718,12 @@
                 petal.textContent = '🌸';
                 petal.style.opacity = '0';
                 petal.style.animation = `fall ${Math.random() * 5 + 3}s linear forwards`;
-                
+
                 petals.appendChild(petal);
             }
-            
+
             document.body.appendChild(petals);
-            
+
             // Remove after animation
             setTimeout(() => {
                 petals.remove();
@@ -630,7 +734,7 @@
         function createSparkles() {
             const sparkles = document.createElement('div');
             sparkles.className = 'absolute inset-0 overflow-hidden';
-            
+
             for (let i = 0; i < 20; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'absolute bg-yellow-200 rounded-full';
@@ -640,12 +744,12 @@
                 sparkle.style.top = `${Math.random() * 100}%`;
                 sparkle.style.opacity = '0';
                 sparkle.style.animation = `sparkle ${Math.random() * 1 + 0.5}s infinite alternate`;
-                
+
                 sparkles.appendChild(sparkle);
             }
-            
+
             document.body.appendChild(sparkles);
-            
+
             // Remove after animation
             setTimeout(() => {
                 sparkles.remove();
@@ -667,7 +771,7 @@
         // Setup event listeners
         function setupEventListeners() {
             // Music toggle
-            musicToggle.addEventListener('click', function() {
+            musicToggle.addEventListener('click', function () {
                 if (bgMusic.paused) {
                     bgMusic.play();
                     musicToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>';
@@ -678,13 +782,13 @@
             });
 
             // Download button
-            downloadBtn.addEventListener('click', function() {
+            downloadBtn.addEventListener('click', function () {
                 // Create a PDF of all messages
                 const doc = new jsPDF();
                 doc.setFontSize(22);
                 doc.text('Our Love Story', 105, 20, null, null, 'center');
                 doc.setFontSize(16);
-                
+
                 let y = 40;
                 steps.forEach((step, index) => {
                     if (y > 280) {
@@ -699,12 +803,12 @@
                     doc.text(splitText, 20, y + 5);
                     y += splitText.length * 7 + 15;
                 });
-                
+
                 doc.save('Our_Love_Story.pdf');
             });
 
             // Restart button
-            restartBtn.addEventListener('click', function() {
+            restartBtn.addEventListener('click', function () {
                 currentStep = 0;
                 finalCelebration.classList.add('hidden');
                 showStep(currentStep);
@@ -734,4 +838,5 @@
         window.addEventListener('load', init);
     </script>
 </body>
+
 </html>
